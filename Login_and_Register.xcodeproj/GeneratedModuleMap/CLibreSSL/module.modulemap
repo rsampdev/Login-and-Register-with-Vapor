@@ -1,0 +1,5 @@
+module CLibreSSL {
+    umbrella header "/Users/Rodney_Sampson/Code/Development/Workspaces/Xcode Workspaces/GitHub/Login and Register/Login_and_Register/Packages/CLibreSSL-1.0.0/Sources/CLibreSSL/include/CLibreSSL.h"
+    link "CLibreSSL"
+    export *
+}
