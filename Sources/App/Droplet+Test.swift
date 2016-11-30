@@ -9,8 +9,12 @@
 @testable import Vapor
 
 func makeTestDroplet() throws -> Droplet {
-    let drop = Droplet()
-//    drop.arguments = ["dummy/path/", "prepare"]
+    let drop = Droplet(arguments: ["dummy/path/", "prepare"],
+                       workDir: "/Users/Rodney_Sampson/Code/Development/Workspaces/Xcode Workspaces/GitHub/Login and Register/Login_and_Register/",
+                       environment: .test,
+                       config: nil,
+                       localization: try Localization(localizationDirectory: "/Localization"))
+
     try load(drop)
     try drop.runCommands()
     return drop
