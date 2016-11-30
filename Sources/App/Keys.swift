@@ -8,18 +8,29 @@
 
 import Foundation
 
-enum NodeKey {
+enum Key {
     
     enum User: String {
         case id
         case username
         case email
         case password
+        case passwordConfirm
         case users
+    }
+    
+    enum Error: String {
         
-        var key: String {
-            return self.rawValue
+        case errorMessage
+        
+        enum Register: String {
+            case none
         }
+        
+        enum Login: String {
+            case none
+        }
+        
     }
     
 }

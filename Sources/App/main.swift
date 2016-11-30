@@ -1,10 +1,9 @@
 import Vapor
-import VaporMySQL
 
 let drop = Droplet()
 
-try drop.addProvider(VaporMySQL.Provider.self)
+try load(drop)
 
-drop.preparations.append(User.self)
+print(drop.workDir)
 
 drop.run()

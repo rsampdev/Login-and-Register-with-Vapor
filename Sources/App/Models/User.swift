@@ -14,6 +14,7 @@ final class User: Model {
     var username: String
     var email: String
     var password: String
+    var exists: Bool = false
     
     init(username: String, email: String, password: String) {
         self.username = username
@@ -22,32 +23,32 @@ final class User: Model {
     }
     
     init(node: Node, in context: Context) throws {
-        id = try node.extract(NodeKey.User.id.key)
-        username = try node.extract(NodeKey.User.username.key)
-        email = try node.extract(NodeKey.User.email.key)
-        password = try node.extract(NodeKey.User.password.key)
+        self.id = try node.extract(Key.User.id.rawValue)
+        self.username = try node.extract(Key.User.username.rawValue)
+        self.email = try node.extract(Key.User.email.rawValue)
+        self.password = try node.extract(Key.User.password.rawValue)
     }
     
     func makeNode(context: Context) throws -> Node {
         return try Node(node: [
-            NodeKey.User.id.key: id,
-            NodeKey.User.username.key: username,
-            NodeKey.User.email.key: email,
-            NodeKey.User.password.key: password
+            Key.User.id.rawValue: id,
+            Key.User.username.rawValue: username,
+            Key.User.email.rawValue: email,
+            Key.User.password.rawValue: password
             ])
     }
     
     static func prepare(_ database: Database) throws {
-        try database.create(NodeKey.User.users.key) { users in
+        try database.create(Key.User.users.rawValue) { users in
             users.id()
-            users.string(NodeKey.User.username.key)
-            users.string(NodeKey.User.email.key)
-            users.string(NodeKey.User.password.key)
+            users.string(Key.User.username.rawValue)
+            users.string(Key.User.email.rawValue)
+            users.string(Key.User.password.rawValue)
         }
     }
     
     static func revert(_ database: Database) throws {
-        try database.delete(NodeKey.User.users.key)
+        try database.delete(Key.User.users.rawValue)
     }
     
 }

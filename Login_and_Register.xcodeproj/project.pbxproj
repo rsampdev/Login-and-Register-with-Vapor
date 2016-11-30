@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		33F165EB1DED1EFB00BC861A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165EA1DED1EFB00BC861A /* User.swift */; };
-		33F165EE1DED1FEB00BC861A /* NodeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165ED1DED1FEB00BC861A /* NodeKeys.swift */; };
+		33F165EE1DED1FEB00BC861A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165ED1DED1FEB00BC861A /* Keys.swift */; };
 		33F165F01DED253300BC861A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165EF1DED253300BC861A /* UserController.swift */; };
+		33F165F31DEE70FE00BC861A /* UserAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165F21DEE70FE00BC861A /* UserAuthResponse.swift */; };
+		33F165F91DEE9DEF00BC861A /* Droplet+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165F81DEE9DEF00BC861A /* Droplet+Test.swift */; };
+		33F165FB1DEE9F6900BC861A /* Droplet+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F165FA1DEE9F6900BC861A /* Droplet+Setup.swift */; };
 		OBJ_1411 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1412 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
 		OBJ_1413 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Box.swift */; };
@@ -5030,8 +5033,11 @@
 
 /* Begin PBXFileReference section */
 		33F165EA1DED1EFB00BC861A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		33F165ED1DED1FEB00BC861A /* NodeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeKeys.swift; sourceTree = "<group>"; };
+		33F165ED1DED1FEB00BC861A /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		33F165EF1DED253300BC861A /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		33F165F21DEE70FE00BC861A /* UserAuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthResponse.swift; sourceTree = "<group>"; };
+		33F165F81DEE9DEF00BC861A /* Droplet+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Droplet+Test.swift"; sourceTree = "<group>"; };
+		33F165FA1DEE9F6900BC861A /* Droplet+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Droplet+Setup.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
 		OBJ_1001 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
@@ -7114,9 +7120,17 @@
 		33F165EC1DED1FAD00BC861A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				33F165ED1DED1FEB00BC861A /* NodeKeys.swift */,
+				33F165ED1DED1FEB00BC861A /* Keys.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		33F165F11DEE116900BC861A /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				33F165F21DEE70FE00BC861A /* UserAuthResponse.swift */,
+			);
+			name = Containers;
 			sourceTree = "<group>";
 		};
 		OBJ_1000 /* Bar */ = {
@@ -7966,6 +7980,9 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_1353 /* main.swift */,
+				33F165FA1DEE9F6900BC861A /* Droplet+Setup.swift */,
+				33F165F81DEE9DEF00BC861A /* Droplet+Test.swift */,
+				33F165F11DEE116900BC861A /* Containers */,
 				OBJ_1354 /* Controllers */,
 				OBJ_1356 /* Models */,
 				33F165EC1DED1FAD00BC861A /* Helpers */,
@@ -8694,7 +8711,7 @@
 			path = "Packages/CLibreSSL-1.0.0/Sources/CLibreSSL";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -8706,7 +8723,6 @@
 				OBJ_1362 /* Resources */,
 				OBJ_1363 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_657 /* include */ = {
@@ -10777,7 +10793,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_1363 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -12256,10 +12272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				33F165EE1DED1FEB00BC861A /* NodeKeys.swift in Sources */,
+				33F165EE1DED1FEB00BC861A /* Keys.swift in Sources */,
+				33F165F91DEE9DEF00BC861A /* Droplet+Test.swift in Sources */,
 				33F165EB1DED1EFB00BC861A /* User.swift in Sources */,
 				33F165F01DED253300BC861A /* UserController.swift in Sources */,
+				33F165F31DEE70FE00BC861A /* UserAuthResponse.swift in Sources */,
 				OBJ_3672 /* main.swift in Sources */,
+				33F165FB1DEE9F6900BC861A /* Droplet+Setup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
